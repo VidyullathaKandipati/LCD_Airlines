@@ -7,7 +7,6 @@ app.FormView = Backbone.View.extend({
   },
   render: function(){
     this.$el.html( $('#formViewTemplate').html() );
-
   },
   getFlights: function(){
     var origin = $('#origin').val();
