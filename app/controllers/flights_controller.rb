@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
   def search
 
   end
-  
+
   # GET /flights
   # GET /flights.json
   def index
