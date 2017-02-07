@@ -1,4 +1,13 @@
-<h1>Welcome to LCD airlines.</h1>
+<div class="headline">
+  <h1><span>Burning</span><br>LCD AIRLINES.</h1>
+
+  <div class="mouse">
+      <span></span>
+  </div>
+</div>
+
+<div id="searchWrapper">
+<h1>Search and book flights</h1>
 
 <div id="main">
   <div id="formView"></div>
@@ -7,11 +16,15 @@
   </div>
 </div>
 
+
+
+</div>
+
 <script id="formViewTemplate" type="text/template">
-  <label>From</label>
-    <input type="text" id="origin"/>
-  <label>To</label>
-    <input type="text" id="destination"/>
+  <!-- <label>From</label> -->
+    <input type="text" id="origin" placeholder="Departure airport" autofocus/>
+  <!-- <label>To</label> -->
+    <input type="text" id="destination" placeholder="Arrival airport"/>
 
   <button>Search</button>
 </script>

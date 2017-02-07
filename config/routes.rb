@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :users
   resources :flights
   resources :planes
+
+  get '/login' => 'session#new', as: 'login'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
 end

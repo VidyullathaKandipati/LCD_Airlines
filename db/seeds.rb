@@ -19,9 +19,9 @@ f2 = Flight.create(date: "2017/02/24",origin: "SYD",destination: "JFK")
 f3 = Flight.create(date: "2017/02/25",origin: "SIN",destination: "LHR")
 
 User.destroy_all
-u1 = User.create(name: "Daniele", email: "daniele@ga.com", password: "chicken", password_confirmation: "chicken")
+u1 = User.create(name: "Daniele", email: "daniele@ga.com", password: "chicken", password_confirmation: "chicken", :admin => true)
 u2 = User.create(name: "Christle", email: "christle@ga.com", password: "chicken", password_confirmation: "chicken")
-u3 = User.create(name: "Latha", email: "latha@ga.com", password: "chicken", password_confirmation: "chicken")
+u3 = User.create(name: "Latha", email: "latha@ga.com", password: "chicken", password_confirmation: "chicken", :admin => true)
 
 Reservation.destroy_all
 f1.reservations.create(user: u1, seat_row: "A", seat_col: 3)

@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="user_page">
+<h1>Welcome   <%= @user.name %> </h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<p>Your reservations:</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% @user.reservations.each do |booking| %>
+  <p><%= booking.flight.date.to_s %> <%= booking.flight.origin %> - <%= booking.flight.destination %> </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% end %>
+
+
+
+<%# link_to 'Edit', edit_user_path(@user) %>
+<%# link_to 'Back', users_path %>
+
+</div>
