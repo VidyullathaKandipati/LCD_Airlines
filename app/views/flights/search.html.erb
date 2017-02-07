@@ -1,1 +1,45 @@
-<h1>Burning airlines burning soon...</h1>
+<h1>Welcome to LCD airlines.</h1>
+
+<div id="main">
+  <div id="formView"></div>
+  <div id="flightSearchView">
+    <!-- <ul id="results"></ul> -->
+  </div>
+</div>
+
+<script id="formViewTemplate" type="text/template">
+  <label>From</label>
+    <input type="text" id="origin"/>
+  <label>To</label>
+    <input type="text" id="destination"/>
+
+  <button>Search</button>
+</script>
+
+<script id="flightInfo" type="text/template">
+<h2>Flight Search results.</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Flight</th>
+        <th>From > To</th>
+        <th>Plane</th>
+      </tr>
+    </thead>
+
+    <tbody id="flightTableBody">
+
+    </tbody>
+  </table>
+
+</script>
+
+<script id="flightTableTemplate" type="text/template">
+<tr>
+  <td>{{ date }}</td>
+  <td><a href="#">{{ id }}</a></td>
+  <td>{{ origin  }} > {{ destination }}</td>
+  <td>{{ plane_id }}</td>
+</tr>
+</script>

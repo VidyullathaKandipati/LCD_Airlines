@@ -5,6 +5,7 @@ app.AppRouter = Backbone.Router.extend({
     '': 'index'
   },
   index: function(){
-    
+    var formView = new app.FormView({collection: app.flights});
+    formView.render();
   }
 });
