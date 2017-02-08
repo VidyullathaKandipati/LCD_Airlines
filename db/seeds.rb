@@ -24,9 +24,9 @@ u2 = User.create(name: "Christle", email: "christle@ga.com", password: "chicken"
 u3 = User.create(name: "Latha", email: "latha@ga.com", password: "chicken", password_confirmation: "chicken", :admin => true)
 
 Reservation.destroy_all
-f1.reservations.create(user: u1, seat_row: "A", seat_col: 3)
-f1.reservations.create(user: u2, seat_row: "C", seat_col: 1)
-f2.reservations.create(user: u3, seat_row: "A", seat_col: 6)
+f1.reservations.create(user: u1, seat_row: 3, seat_col: "A")
+f1.reservations.create(user: u2, seat_row: 1, seat_col: "C")
+f2.reservations.create(user: u3, seat_row: 6, seat_col: "A")
 
 # Associations
 p1.flights << f1 << f2

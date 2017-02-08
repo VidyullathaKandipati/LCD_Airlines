@@ -10,11 +10,14 @@ $(document).ready(function(){
   app.appRouter = new app.AppRouter();
 
   app.flights = new app.Flights();
-  app.flights.fetch().done(function(){
-    Backbone.history.start();
+  app.planes = new app.Planes();
+  app.reservations = new app.Reservations();
+  app.reservations.fetch();
+  app.planes.fetch().done(function(){
+    app.flights.fetch().done(function() {
+      Backbone.history.start();
+    });
   });
-
-
   //nav bar ////////////////////////////////
   // Sticky Header
   $(window).scroll(function() {
@@ -53,6 +56,5 @@ $(document).ready(function(){
       event.preventDefault();
   });
   //////////////////////////////////
-
 
 });

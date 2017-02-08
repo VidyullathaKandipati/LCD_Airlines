@@ -5,14 +5,17 @@ app.FlightSearchView = Backbone.View.extend({
   events: {
     'click a': 'showbookings'
   },
+  flightModel: '',
   render: function(){
-      // console.log(this.model);
+      this.flightModel = this.model;
+      console.log("Render",this.flightModel);
       var flightTemp = _.template( $('#flightTableTemplate').html() );
       // this.$el.html( flightTemp(this.model.attributes) );
       this.$el.html( flightTemp(this.model.attributes) );
       // var flightTemplate = $()
   },
   showbookings: function() {
-    app.appRouter.navigate('flights/' + this.model.get('id'), true);
+    app.appRouter.navigate('flights/' + this.flightModel.get('id'), true);
+    console.log("FLight SearchView showbookings",this.flightModel.plane.get('rows'));
   }
 });
