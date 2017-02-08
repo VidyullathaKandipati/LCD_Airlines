@@ -3,8 +3,10 @@ var app = app || {};
 app.BookingReservationView = Backbone.View.extend({
   el: '#main',
   events: {
-    'click td': 'reserveSeat'
+    'click td': 'reserveSeat',
+    'click #reserve_seat': 'makeReservation'
   },
+  seatNumber: [],
   render: function() {
     var rows = this.model.plane.get('rows');
     var cols = this.model.plane.get('cols');
@@ -42,18 +44,24 @@ app.BookingReservationView = Backbone.View.extend({
   reserveSeat: function(event){
     //Checking for reservation on the seat
     if ( (event.toElement.className !== 'reserved') && (event.toElement.className !== 'new-reservation') ){
-      var seat_number = event.toElement.textContent.split(' ');
-      var seat_row = seat_number[0];
-      var seat_col = seat_number[1];
+      this.seatNumber.push(event.toElement.textContent);
+      $('#seat_number').text(this.seatNumber);
 
-      $('#seat_number').append(event.toElement.textContent);
-
-      console.log("Row: "+seat_row + " Col: "+seat_col);
       event.toElement.className = "new-reservation";
       // app.reservations.add({seat_col})
     }
-    else{
-      console.log("Seat already reserved");
+  },
+  makeReservation: function(){
+    console.log(this.seatNumber);
+
+    for (var i=0; i< this.seatNumber.length; i++){
+      var seat = this.seatNumber[i].split(' ');
+      var seat_row = seat[0];
+      var seat_col = seat[1];
+      console.log(this.model.id, app.user.id, seat);
+      app.reservations.create({flight_id: this.model.id, user_id: app.user.id, seat_row: seat_row, seat_col: seat_col});
     }
+    // var makeReservationView  = new MakeReservation(this.seatNumber);
+    // makeReservationView.render();
   }
 });
