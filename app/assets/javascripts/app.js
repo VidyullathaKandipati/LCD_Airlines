@@ -56,5 +56,14 @@ $(document).ready(function(){
       event.preventDefault();
   });
   //////////////////////////////////
+  //Continuous polling for new reservations, planes and flights
+  function fetch(){
+    app.reservations.fetch();
+    app.planes.fetch().done(function(){
+      app.flights.fetch();
+    });
+    setTimeout(fetch, 4000);
+  }
+  fetch();
 
 });

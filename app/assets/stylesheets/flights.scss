@@ -5,14 +5,16 @@
   }
 }
 
+
+
 .reserved {
-  background-color: red;
-  color: white;
+  background-color: #ff4c4c !important;
+  color: white !important;
 }
 
 .new-reservation {
-  background-color: blue;
-  color: white;
+  background-color: #0080ff !important;
+  color: white !important;
 }
 
 // colors
@@ -292,16 +294,29 @@ p {
 
 #flightSearchView {
   // border: 1px solid grey;
-  margin: 50px auto;
+  margin: 40px auto;
 
-  width: 960px;
-  background: #fafafa;
-  // display: none;
+  max-width: 960px;
+  // background: #fafafa;
+  // display: flex;
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  margin-bottom: 2em;
+
+
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
 
   h2 {
     background: white;
-    padding: 2em;
-
   }
 
   table {
@@ -313,7 +328,8 @@ p {
   }
 
   td, th {
-    padding: 1em 3em;
+    padding: 1em 0;
+    width: 14em;
     text-align: center;
     font-size: 15px;
   }
@@ -362,11 +378,13 @@ p {
 }
 
 footer {
-  background: #292c2f;
+  background: #f2f2f2;
   width:100%;
-  height:100px;
+  height:200px;
   bottom:0;
   left:0;
+  text-align: center;
+  padding: 7em;
 }
 
 // sign up sign in page //////////////////////////////////////////////

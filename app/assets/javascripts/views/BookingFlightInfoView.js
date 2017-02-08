@@ -6,8 +6,8 @@ app.BookingFlightInfoView = Backbone.View.extend({
   render: function() {
     var flightTemp = _.template($('#bookingFlightInfo').html());
     this.$el.html(flightTemp(this.model.attributes));
-    app.bookingReservation = new app.BookingReservationView({model: this.model});
-    app.bookingReservation.render();
+    var bookingReservation = new app.BookingReservationView({model: this.model});
+    bookingReservation.render();
   }
 
 });
