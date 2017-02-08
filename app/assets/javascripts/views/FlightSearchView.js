@@ -3,7 +3,7 @@ var app = app || {};
 app.FlightSearchView = Backbone.View.extend({
   el: '#flightTableBody',
   events: {
-    'click a': 'showbookings'
+    'click td button': 'showbookings'
   },
   flightModel: '',
   render: function(){
@@ -15,7 +15,13 @@ app.FlightSearchView = Backbone.View.extend({
       // var flightTemplate = $()
   },
   showbookings: function() {
-    app.appRouter.navigate('flights/' + this.flightModel.get('id'), true);
-    console.log("FLight SearchView showbookings",this.flightModel.plane.get('rows'));
+    if (app.user === null){
+      // app.appRouter.navigate('/login', true);
+      window.location = '/login';
+    }
+    else{
+      app.appRouter.navigate('flights/' + this.flightModel.get('id'), true);
+      console.log("FLight SearchView showbookings",this.flightModel.plane.get('rows'));
+    }
   }
 });
