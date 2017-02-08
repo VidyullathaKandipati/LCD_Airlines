@@ -37,6 +37,7 @@ gem 'font-awesome-sass', '~> 4.4.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'thor', '0.19.1'
+gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
