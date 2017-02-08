@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.ticket-container {
+  position: relative;
+  width: 600px;
+  margin: 100px auto 0 auto;
+}
+
 .box{
-  position: absolute;
-  top: calc(50% - 125px);
-  top: -webkit-calc(50% - 125px);
-  left: calc(50% - 300px);
-  left: -webkit-calc(50% - 300px);
+  position: relative;
 }
 
 .ticket{
@@ -91,7 +93,7 @@
     inset 0 -250px 0 #F4D483;
 }
 
-.content{
+.ticket-content{
   position: absolute;
   top: 40px;
   width: 100%;

@@ -62,7 +62,18 @@ app.BookingReservationView = Backbone.View.extend({
       app.reservations.create({flight_id: this.model.id, user_id: app.user.id, seat_row: seat_row, seat_col: seat_col});
     }
     // console.log();
-    this.$el.append( $('#ticketTemplate').html() );
+    var ticketData = {
+      origin: this.model.get('origin'),
+      destination: this.model.get('destination'),
+      user: app.user.name,
+      flight_id: this.model.id,
+      seat_row: seat_row,
+      seat_col: seat_col,
+      date: this.model.get('date')
+    };
+    var ticketTemplate =  _.template( $('#ticketTemplate').html() );
+    this.$el.append( ticketTemplate(ticketData) );
+    // this.$el.append( $('#ticketTemplate').html() );
     // var makeReservationView  = new MakeReservation(this.seatNumber);
     // makeReservationView.render();
   }
