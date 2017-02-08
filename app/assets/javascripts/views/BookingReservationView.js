@@ -61,6 +61,8 @@ app.BookingReservationView = Backbone.View.extend({
       console.log(this.model.id, app.user.id, seat);
       app.reservations.create({flight_id: this.model.id, user_id: app.user.id, seat_row: seat_row, seat_col: seat_col});
     }
+    // console.log();
+    this.$el.append( $('#ticketTemplate').html() );
     // var makeReservationView  = new MakeReservation(this.seatNumber);
     // makeReservationView.render();
   }
