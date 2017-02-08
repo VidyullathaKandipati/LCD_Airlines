@@ -1,3 +1,147 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#flightTableBody td {
+  padding: 0;
+  width: 2em;
+
+}
+//
+// body {
+//   background: #DEE0E3;
+// }
+
+// SEATS //////////////////////////////
+#seat-body {
+  border-collapse: separate;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+
+#seat-body tr {
+    border-radius: 8px;
+}
+
+#seat-body td {
+    border-radius: 8px;
+    background: #dbedff;
+    color: #c0c0aa;
+
+}
+
+#seat-body td:hover {
+    border-radius: 8px;
+    background: #0080ff;
+    color: white;
+
+}
+
+
+#seat-body.collapse {
+    border-collapse: collapse;
+}
+//USER PAGE /////////////////////////////////////////
+
+
+.user_page {
+  max-width: 600px;
+  margin: 20px 50px;
+  height: 100%;
+  padding-bottom: 6em;
+
+  h2 {
+    margin-left: 200px;
+  }
+  .user-header {
+    padding: 20px;
+    padding-bottom: 60px;
+    margin-bottom: -40px;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    user-select: none;
+  }
+
+  .flight {
+    padding: 20px;
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .flight-active {
+    font-size: 20px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.3);
+    background: white;
+    border-color: white;
+  }
+
+  .label {
+    font-size: .8em;
+    color: white;
+    background: #38B071;
+    padding: .35em .4em .2em .4em;
+    margin-right: .4em;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+  }
+
+    .flight-desc {
+      font-size: .9em;
+      margin-top: .4em;
+    }
+
+  .flight-cities {
+    flex: 1 0 100%;
+    display: flex;
+    margin: .8em 0;
+  }
+
+  .flight-progress {
+    flex: 1 0 auto;
+    height: 4px;
+    align-self: center;
+    margin: 0 15px;
+    background: #F0F0F0;
+  }
+
+  .flight-active .flight-progress-track {
+    width: 65%;
+    height: 100%;
+    text-align: right;
+    font-size: 2.6em;
+    line-height: 0.04;
+    color: #30b16f;
+    letter-spacing: -.05em;
+
+    background: #30B16F;
+  }
+  .flight-leg {
+      flex: 1 0, 50%;
+      display: flex;
+  }
+  .flight-city {
+      text-align: right;
+      font-size: 1.875em;
+  }
+
+  .flight-details {
+      font-size: 1.125em;
+  }
+
+  td + td {
+    padding-left: 15px;
+  }
+
+}

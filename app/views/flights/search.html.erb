@@ -7,7 +7,7 @@
 </div>
 
 <div id="searchWrapper">
-<h1>Need a holiday?</h1>
+<h1>Book flights</h1>
 
 <div id="main">
   <div id="formView"></div>
@@ -29,6 +29,8 @@
   <button>Search</button>
 </script>
 
+
+
 <script id="flightInfo" type="text/template">
 <h2>Choose Flight</h2>
   <table>
@@ -36,7 +38,7 @@
       <tr>
         <th>Date</th>
         <th>Flight</th>
-        <th>From > To</th>
+        <th>From <i class="fa fa-angle-double-right"></i> To</th>
         <th>Plane</th>
       </tr>
     </thead>
@@ -52,17 +54,41 @@
 <tr>
   <td>{{ date }}</td>
   <td>{{ id }}</td>
-  <td>{{ origin  }} > {{ destination }}</td>
+  <td>{{ origin  }} <span><i class="fa fa-plane"></i> {{ destination }}</td>
   <td>{{ plane_name }}</td>
-  <td><button>Book</button></td>
+  <td><button>Choose</button></td>
 </tr>
 </script>
 
 <script id="bookingFlightInfo" type="text/template">
-  <p>
-    {{ date }} {{ origin  }} > {{ destination }}
-  </p>
+<div class="user_page">
+  <div class="flight flight-active">
+    <div class="flight-cities">
+      <div class="flight-city"> {{ origin  }}</div>
+        <div class="flight-progress"><div class="flight-progress-track">&#9992;</div></div>
+      <div class="flight-city">{{ destination }}</div>
+    </div>
+
+
+<div class="flight-leg flight-from">
+  <table class="flight-details">
+    <thead>
+      <tr>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  </div>
+</div>
 </script>
+
 
 <script id="seatTemplate" type="text/template">
   <table id="seat-view">
