@@ -11,6 +11,7 @@ app.AppRouter = Backbone.Router.extend({
   },
   bookings: function(id) {
     var flight = app.flights.get(id);
+    console.log("App router Bookings: ", flight.plane);
     var bookingView = new app.BookingFlightInfoView({model: flight});
     bookingView.render();
   }

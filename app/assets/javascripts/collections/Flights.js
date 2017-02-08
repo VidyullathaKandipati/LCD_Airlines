@@ -10,10 +10,8 @@ app.Flights = Backbone.Collection.extend({
     this.getPlane(flight);
   },
   getPlane: function(flight){
-    flight.attributes.plane = new app.Plane();
-    flight.attributes.plane.urlRoot = '/planes/'+flight.get('plane_id');
-    flight.attributes.plane.fetch().done(function(plane){
-      flight.set({plane_name: plane.name});
-    });
+      var flight_id = flight.get('plane_id');
+      flight.plane = app.planes.get(flight.get('plane_id'));
+      flight.set({plane_name: flight.plane.get('name')});
   }
 });
