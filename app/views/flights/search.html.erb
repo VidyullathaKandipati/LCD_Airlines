@@ -7,7 +7,7 @@
 </div>
 
 <div id="searchWrapper">
-<h1>Search and book flights</h1>
+<h1>Need a holiday?</h1>
 
 <div id="main">
   <div id="formView"></div>
@@ -30,7 +30,7 @@
 </script>
 
 <script id="flightInfo" type="text/template">
-<h2>Flight Search results.</h2>
+<h2>Choose Flight</h2>
   <table>
     <thead>
       <tr>
@@ -91,13 +91,13 @@ app.user = <%== @current_user.to_json %>   // uses ruby to get id of login user
   <span class="airline airlineslip">LCD Airlines</span>
   <span class="boarding">Boarding pass</span>
   <div class="content">
-    <span class="jfk">{{origin}}</span>
+    <span class="originTicket">{{origin}}</span>
     <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-    <span class="sfo">{{destination}}</span>
+    <span class="destTicket">{{destination}}</span>
 
-    <span class="jfk jfkslip">{{origin}}</span>
+    <span class="originTicket originTicketslip">{{origin}}</span>
     <span class="plane planeslip"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
-    <span class="sfo sfoslip">{{destination}}</span>
+    <span class="destTicket destTicketslip">{{destination}}</span>
     <div class="sub-content">
       <span class="watermark">LCD LCD</span>
       <span class="name">PASSENGER NAME<br><span>{{app.user.name}}</span></span>

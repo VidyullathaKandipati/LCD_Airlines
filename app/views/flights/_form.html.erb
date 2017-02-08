@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
     <%= f.datetime_select :date %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :origin %><br>
     <%= f.text_field :origin %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :destination %><br>
     <%= f.text_field :destination %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :plane_id %><br>
     <%= f.number_field :plane_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

@@ -290,6 +290,39 @@ p {
   padding: 3em;
   border-radius: 1em;
 
+#flightSearchView {
+  // border: 1px solid grey;
+  margin: 50px auto;
+
+  width: 960px;
+  background: #fafafa;
+  // display: none;
+
+  h2 {
+    background: white;
+    padding: 2em;
+
+  }
+
+  table {
+    margin: 0 auto;
+    text-align: center;
+    // border: 1px solid grey;
+    max-height: 100%;
+    border-radius: 1em;
+  }
+
+  td, th {
+    padding: 1em 3em;
+    text-align: center;
+    font-size: 15px;
+  }
+
+}
+
+
+
+
 
   input {
     border: none;
@@ -344,8 +377,18 @@ footer {
   height: 600px;
 }
 
+
+.addForm {
+  margin: 50px auto;
+  width: 400px;
+  height: 600px;
+}
+  input {
+    width: 310px;
+  }
+
 //Tables
-#seat-body td{
+#seat-body td {
   padding: 1em;
   margin: 1em;
 }
