@@ -7,8 +7,6 @@ _.templateSettings = {
 
 $(document).ready(function(){
 
-
-
   app.appRouter = new app.AppRouter();
 
   app.flights = new app.Flights();
