@@ -173,5 +173,8 @@ button#reserve_seat {
   .aboutImageWrapper {
       display: inline-block;
   }
+  .aboutImageWrapper a:hover {
+    background: none;
+  }
 
 }
