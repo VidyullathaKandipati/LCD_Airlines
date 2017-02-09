@@ -31,17 +31,49 @@ app.BookingReservationView = Backbone.View.extend({
         var td_text = i + " " + colNames[j];
         $(tData).html(td_text);
         $(tRow).append(tData);
-        //Check for the reservations
+        //Check for the existing reservations on flight
         flight_reservations.forEach(function(fr){
           if ( (fr.get('seat_row') === i) && (fr.get('seat_col') === colNames[j]) )
           {
-            $(tData).addClass('reserved');
+            $(tData).addClass('reserved'); //This shows the reserved seats in red
           }
-          $(tData).attr('id',i+colNames[j]);
         });
+        $(tData).attr('id',i+colNames[j]);
       }
+      //Appending the seat row to the table
       $('#seat-body').append(tRow);
     }
+    // Preserving the previous selected seats on page re-rendering
+    var reservedSeats = [];
+    for (var i=0; i< this.seatNumber.length; i++){
+      var seat = this.seatNumber[i].split(' ');
+      var seat_row = seat[0];
+      var seat_col = seat[1];
+      var seatElement = '#'+seat_row+seat_col;
+
+      console.log("Just reserving the seats : ",seatElement);
+
+      if ( !( $(seatElement).is('.reserved') ) ){
+        debugger;
+        $(seatElement).addClass("new-reservation");
+      }
+      else{
+        var seat = seat_row+" "+seat_col;
+        console.log(seat);
+        reservedSeats.push(seat);
+      }
+    }
+    for(var i=0; i<reservedSeats.length; i++){
+      var index = this.seatNumber.indexOf(reservedSeats[i]);
+      if (index > -1) {
+        this.seatNumber.splice(index, 1);
+      }
+    }
+    reservedSeats = [];
+
+    $('#seat_number').text(this.seatNumber);
+
+    //Rendering Make-reservation buttons and the selected seats display
     $('#reserve-panel').html( $('#reserve-panel-template').html() );
   },
   reserveSeat: function(event){
@@ -73,12 +105,14 @@ app.BookingReservationView = Backbone.View.extend({
       var seat_col = seat[1];
       var seatElement = '#'+seat_row+seat_col;
 
-      if ( $(seatElement).attr('class') !== 'reserved' ){
+      if ( !( $(seatElement).is('.reserved') ) ){
+      // if ( $(seatElement).attr('class') === 'reserved' ){
         app.reservations.create({flight_id: this.model.id, user_id: app.user.id, seat_row: seat_row, seat_col: seat_col});
         $(seatElement).addClass('reserved');
+        // seatElement.className = "reserved";
       }
       else {
-        $(seatElement).removeClass("new-reservation");
+        $(seatElement).removeClass('new-reservation');
         console.log("This seat is no longer available, please select some other seat.");
       }
     }
@@ -94,5 +128,9 @@ app.BookingReservationView = Backbone.View.extend({
     };
     var ticketTemplate =  _.template( $('#ticketTemplate').html() );
     this.$el.append( ticketTemplate(ticketData) );
+
+    //Emptying the reserved seats after booking.
+    this.seatNumber = [];
+
   }
 });
