@@ -3,7 +3,7 @@ var app = app || {};
 app.FlightSearchView = Backbone.View.extend({
   el: '#flightTableBody',
   events: {
-    'click td button': 'showbookings'
+    'click td button': 'showbookings',
   },
   flightModel: '',
   render: function(){
@@ -11,7 +11,7 @@ app.FlightSearchView = Backbone.View.extend({
       console.log("Render",this.flightModel);
       var flightTemp = _.template( $('#flightTableTemplate').html() );
       // this.$el.html( flightTemp(this.model.attributes) );
-      this.$el.html( flightTemp(this.model.attributes) );
+      this.$el.append( flightTemp(this.model.attributes) );
       // var flightTemplate = $()
   },
   showbookings: function() {
