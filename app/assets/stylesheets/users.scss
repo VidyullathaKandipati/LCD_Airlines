@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a:hover {
+  text-decoration: none;
+}
 
 #flightTableBody td {
   padding: 0;
@@ -142,6 +145,39 @@
 
   td + td {
     padding-left: 15px;
+  }
+
+}
+
+button#reserve_seat {
+  width: 140px !important;
+  height: 40px !important;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.aboutWrapper {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 3em;
+  padding-bottom: 6em;
+  text-align: center;
+
+  h1 {
+    padding: 3em;
+  }
+
+  .about {
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+  }
+
+  .aboutImageWrapper {
+    display: inline-block;
+  }
+  .aboutImageWrapper a:hover {
+    background: none;
   }
 
 }
