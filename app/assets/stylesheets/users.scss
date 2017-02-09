@@ -145,3 +145,33 @@
   }
 
 }
+
+button#reserve_seat {
+  width: 140px !important;
+  height: 40px !important;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.aboutWrapper {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 3em;
+  padding-bottom: 6em;
+  text-align: center;
+
+  h1 {
+    padding: 3em;
+  }
+
+  .about {
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+  }
+
+  .aboutImageWrapper {
+      display: inline-block;
+  }
+
+}

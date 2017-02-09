@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/about', as: 'about'
+
   root :to => 'flights#search'
   resources :reservations
   resources :users
