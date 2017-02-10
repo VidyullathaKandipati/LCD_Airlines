@@ -15,13 +15,13 @@ app.FlightSearchView = Backbone.View.extend({
       // var flightTemplate = $()
   },
   showbookings: function() {
-    if (app.user === null){
-      // app.appRouter.navigate('/login', true);
-      window.location = '/login';
-    }
-    else{
+    // if (app.user === null){
+    //   // app.appRouter.navigate('/login', true);
+    //   window.location = '/login';
+    // }
+    // else{
       app.appRouter.navigate('flights/' + this.flightModel.get('id'), true);
       console.log("FLight SearchView showbookings",this.flightModel.plane.get('rows'));
-    }
+    // }
   }
 });
